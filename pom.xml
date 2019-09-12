@@ -25,6 +25,7 @@
             <artifactId>resteasy-core</artifactId>
             <version>${resteasy.version}</version>
         </dependency>
+<!--        下面这个依赖在servlet容器的环境下必须要用到-->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-servlet-initializer</artifactId>
