@@ -38,4 +38,14 @@ public class TagsApiResource implements TagsApi {
     public Response updateTaggable(String realmId, String taggableId, Collection<String> tagIds) {
         return null;
     }
+
+    @Override
+    public Map<String, Collection<Tag>> getAll() {
+        return null;
+    }
+
+    @Override
+    public Response update() {
+        return null;
+    }
 }

@@ -15,38 +15,40 @@ import java.util.Map;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
-@Path("/{realm-id}/tags")
+@Path("/tags/{realm-id}")
 @Consumes(APPLICATION_JSON)
 @Produces(APPLICATION_JSON)
 public interface TagsApi {
 
     @GET
-    Map<String, Collection<Tag>> getAll(@PathParam("realm-id") String realmId);
-
-    @GET
-    @Path("/taggable/{id}")
-    Collection<Tag> getTaggable(@PathParam("realm-id") String realmId, @PathParam("id") String taggableId);
+    Map<String, Collection<Tag>> getAll();
 
     @POST
-    @Path("/taggable/get-all")
-    Map<String, Collection<Tag>> getAllTaggable(@PathParam("realm-id") String realmId, List<String> taggableIds);
+    Response update();
 
-    @GET
-    @Path("/{id}")
-    Tag get(@PathParam("realm-id") String realmId, @PathParam("id") String tagId);
 
-    @POST
-    Response create(@PathParam("realm-id") String realmId, Tag tag);
+//    @GET
+//    @Path("/taggable/{id}")
+//    Collection<Tag> getTaggable(@PathParam("realm-id") String realmId, @PathParam("id") String taggableId);
+//
+//
+//    @PUT
+//    @Path("/taggable/{id}")
+//    Response updateTaggable(@PathParam("realm-id") String realmId, @PathParam("id") String taggableId, Collection<String> tagIds);
 
-    @PUT
-    Response update(@PathParam("realm-id") String realmId, Tag tag);
 
-    @DELETE
-    @Path("/{tag-id}")
-    Response delete(@PathParam("realm-id") String realmId, @PathParam("tag-id") String tagId);
+//    @POST
+//    @Path("/taggable/get-all")
+//    Map<String, Collection<Tag>> getAllTaggable(@PathParam("realm-id") String realmId, List<String> taggableIds);
+//
+//    @GET
+//    @Path("/{id}")
+//    Tag get(@PathParam("realm-id") String realmId, @PathParam("id") String tagId);
 
-    @PUT
-    @Path("/taggable/{id}")
-    Response updateTaggable(@PathParam("realm-id") String realmId, @PathParam("id") String taggableId, Collection<String> tagIds);
+//
+//    @DELETE
+//    @Path("/{tag-id}")
+//    Response delete(@PathParam("realm-id") String realmId, @PathParam("tag-id") String tagId);
+//
 
 }
