@@ -1,5 +1,3 @@
-# test-resteasy-example
-
 启动`jetty`服务器：
 
 ```bash
