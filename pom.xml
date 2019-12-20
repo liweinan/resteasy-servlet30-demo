@@ -11,34 +11,31 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <resteasy.version>4.3.0.Final</resteasy.version>
-        <jetty.maven.plugin.ver>9.4.17.v20190418</jetty.maven.plugin.ver>
+        <resteasy.version>4.4.2.Final</resteasy.version>
+        <jetty.maven.plugin.ver>9.4.24.v20191120</jetty.maven.plugin.ver>
         <javax.servlet.ver>4.0.1</javax.servlet.ver>
         <jupiter.engine.ver>5.1.0</jupiter.engine.ver>
     </properties>
 
     <dependencies>
         <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-bom</artifactId>
+            <version>${resteasy.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>${javax.servlet.ver}</version>
             <scope>provided</scope>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>javax.servlet</groupId>-->
-        <!--            <artifactId>servlet-api</artifactId>-->
-        <!--            <version>2.5</version>-->
-        <!--        </dependency>-->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-core-spi</artifactId>
             <version>${resteasy.version}</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.jboss.resteasy</groupId>-->
-        <!--            <artifactId>resteasy-core-spi</artifactId>-->
-        <!--            <version>${resteasy.version}</version>-->
-        <!--        </dependency>-->
         <!--        下面这个依赖在servlet容器的环境下必须要用到-->
         <!--        https://docs.jboss.org/resteasy/docs/4.3.0.Final/userguide/html_single/index.html#standalone_resteasy-->
         <dependency>
@@ -59,7 +56,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>test-resteasy-example</finalName>
+        <finalName>resteasy-servlet30-demo</finalName>
         <plugins>
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
