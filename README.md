@@ -1,3 +1,7 @@
+# resteasy servlet30 demo
+
+[![CircleCI](https://circleci.com/gh/alchemy-studio/resteasy-servlet30-demo.svg?style=svg)](https://circleci.com/gh/alchemy-studio/resteasy-servlet30-demo)
+
 启动`jetty`服务器：
 
 ```bash
