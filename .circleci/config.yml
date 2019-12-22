@@ -42,3 +42,9 @@ jobs:
       # specify the version you desire here
       - image: circleci/openjdk:11-jdk
     <<: *shared
+
+workflows:
+  version: 2
+  jobs:
+    - jdk8
+    - jdk11
