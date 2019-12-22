@@ -9,8 +9,8 @@
     <packaging>war</packaging>
 
     <properties>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.source>${env.JDK_VERSION}</maven.compiler.source>
+        <maven.compiler.target>${env.JDK_VERSION}</maven.compiler.target>
         <resteasy.version>4.4.2.Final</resteasy.version>
         <jetty.maven.plugin.ver>9.4.24.v20191120</jetty.maven.plugin.ver>
         <javax.servlet.ver>4.0.1</javax.servlet.ver>

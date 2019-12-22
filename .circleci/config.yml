@@ -35,12 +35,16 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/openjdk:8-jdk
+    environment:
+      JDK_VERSION: 8
     <<: *shared
 
   jdk11:
     docker:
       # specify the version you desire here
       - image: circleci/openjdk:11-jdk
+    environment:
+      JDK_VERSION: 11
     <<: *shared
 
 workflows:
