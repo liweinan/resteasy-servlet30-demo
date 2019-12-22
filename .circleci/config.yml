@@ -45,6 +45,7 @@ jobs:
 
 workflows:
   version: 2
-  jobs:
-    - jdk8
-    - jdk11
+  build:
+    jobs:
+      - jdk8
+      - jdk11
