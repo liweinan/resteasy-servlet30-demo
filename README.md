@@ -1,4 +1,4 @@
-# resteasy servlet30 demo
+# RESTEasy Servlet30 Demo
 
 [![CircleCI](https://circleci.com/gh/alchemy-studio/resteasy-servlet30-demo.svg?style=svg)](https://circleci.com/gh/alchemy-studio/resteasy-servlet30-demo)
 
