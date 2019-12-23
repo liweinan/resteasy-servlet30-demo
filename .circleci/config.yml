@@ -28,7 +28,7 @@ shared: &shared
     # run tests!
     - run:
         command: |
-          mvn install
+          mvn -Pcircleci install
 
 jobs:
   jdk8:

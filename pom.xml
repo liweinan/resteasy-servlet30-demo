@@ -9,16 +9,33 @@
     <packaging>war</packaging>
 
     <properties>
-        <!--suppress UnresolvedMavenProperty -->
-        <maven.compiler.source>${env.JDK_VERSION}</maven.compiler.source>
-        <!--suppress UnresolvedMavenProperty -->
-        <maven.compiler.target>${env.JDK_VERSION}</maven.compiler.target>
         <resteasy.version>4.4.2.Final</resteasy.version>
         <jetty.maven.plugin.ver>9.4.24.v20191120</jetty.maven.plugin.ver>
         <javax.servlet.ver>4.0.1</javax.servlet.ver>
         <jupiter.engine.ver>5.1.0</jupiter.engine.ver>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>circleci</id>
+            <properties>
+                <!--suppress UnresolvedMavenProperty -->
+                <maven.compiler.source>${env.JDK_VERSION}</maven.compiler.source>
+                <!--suppress UnresolvedMavenProperty -->
+                <maven.compiler.target>${env.JDK_VERSION}</maven.compiler.target>
+            </properties>
+        </profile>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <maven.compiler.source>11</maven.compiler.source>
+                <maven.compiler.target>11</maven.compiler.target>
+            </properties>
+        </profile>
+    </profiles>
     <dependencies>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
