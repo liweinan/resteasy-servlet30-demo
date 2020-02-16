@@ -13,6 +13,7 @@
         <jetty.maven.plugin.ver>9.4.24.v20191120</jetty.maven.plugin.ver>
         <javax.servlet.ver>4.0.1</javax.servlet.ver>
         <jupiter.engine.ver>5.1.0</jupiter.engine.ver>
+        <version.org.springframework>5.0.14.RELEASE</version.org.springframework>
     </properties>
 
     <profiles>
@@ -67,6 +68,16 @@
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${jupiter.engine.ver}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-spring-web</artifactId>
+            <version>${resteasy.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${version.org.springframework}</version>
         </dependency>
     </dependencies>
     <build>
