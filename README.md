@@ -22,3 +22,18 @@ Hello, world!
 
 $
 ```
+
+访问spring annotation标记的resource：
+
+```bash
+$ http localhost:8080/app/spring
+HTTP/1.1 200 OK
+Content-Length: 17
+Content-Type: application/octet-stream
+Date: Sun, 16 Feb 2020 04:54:13 GMT
+Server: Jetty(9.4.24.v20191120)
+
+Spring is coming!
+
+$
+```
