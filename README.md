@@ -37,3 +37,10 @@ Spring is coming!
 
 $
 ```
+
+---
+
+关于`HashMapResource`的使用方法：
+
+* [远程调试java代码（分析一个resteasy的例子）](https://weinan.io/2020/03/30/resteasy.html)
+
