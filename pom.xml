@@ -9,7 +9,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <resteasy.version>4.4.2.Final</resteasy.version>
+        <resteasy.version>4.6.1.Final</resteasy.version>
         <jetty.maven.plugin.ver>9.4.24.v20191120</jetty.maven.plugin.ver>
         <javax.servlet.ver>4.0.1</javax.servlet.ver>
         <jupiter.engine.ver>5.1.0</jupiter.engine.ver>
