@@ -5,10 +5,13 @@
     <!--<web-app>-->
     <display-name>Archetype Created Web Application</display-name>
 
-    <context-param>
-        <param-name>resteasy.scanned.resource.classes.with.builder</param-name>
-        <param-value>
-            org.jboss.resteasy.spi.metadata.SpringResourceBuilder:io.weli.test.resteasy.example.SpringRestResource
-        </param-value>
-    </context-param>
+<!--    <context-param>-->
+<!--        <param-name>resteasy.scanned.resource.classes.with.builder</param-name>-->
+<!--        <param-value>-->
+<!--            org.jboss.resteasy.spi.metadata.SpringResourceBuilder:io.weli.test.resteasy.example.SpringRestResource-->
+<!--        </param-value>-->
+<!--    </context-param>-->
+
+
+
 </web-app>

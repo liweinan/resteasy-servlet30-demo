@@ -2,38 +2,33 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <parent>
+        <groupId>dev.resteasy.tools</groupId>
+        <artifactId>resteasy-parent</artifactId>
+        <version>2.0.3.Final</version>
+        <relativePath/>
+    </parent>
     <groupId>io.weli</groupId>
     <artifactId>resteasy-servlet30-demo</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <properties>
-        <resteasy.version>4.4.2.Final</resteasy.version>
-        <jetty.maven.plugin.ver>9.4.24.v20191120</jetty.maven.plugin.ver>
-        <javax.servlet.ver>4.0.1</javax.servlet.ver>
+        <resteasy.version>6.2.3.Final</resteasy.version>
+        <jetty.maven.plugin.ver>11.0.14</jetty.maven.plugin.ver>
+        <jakarta.servlet.ver>6.0.0</jakarta.servlet.ver>
         <jupiter.engine.ver>5.1.0</jupiter.engine.ver>
-        <version.org.springframework>5.0.14.RELEASE</version.org.springframework>
     </properties>
 
     <profiles>
-        <profile>
-            <id>circleci</id>
-            <properties>
-                <!--suppress UnresolvedMavenProperty -->
-                <maven.compiler.source>${env.JDK_VERSION}</maven.compiler.source>
-                <!--suppress UnresolvedMavenProperty -->
-                <maven.compiler.target>${env.JDK_VERSION}</maven.compiler.target>
-            </properties>
-        </profile>
         <profile>
             <id>default</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <maven.compiler.source>11</maven.compiler.source>
-                <maven.compiler.target>11</maven.compiler.target>
+                <maven.compiler.source>17</maven.compiler.source>
+                <maven.compiler.target>17</maven.compiler.target>
             </properties>
         </profile>
     </profiles>
@@ -46,14 +41,14 @@
             <scope>import</scope>
         </dependency>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${javax.servlet.ver}</version>
-            <scope>provided</scope>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>${jakarta.servlet.ver}</version>
+<!--            <scope>provided</scope>-->
         </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-core-spi</artifactId>
+            <artifactId>resteasy-core</artifactId>
             <version>${resteasy.version}</version>
         </dependency>
         <!--        下面这个依赖在servlet容器的环境下必须要用到-->
@@ -71,11 +66,6 @@
         </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-spring-web</artifactId>
-            <version>${resteasy.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-client</artifactId>
             <version>${resteasy.version}</version>
         </dependency>
@@ -83,11 +73,6 @@
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jackson2-provider</artifactId>
             <version>${resteasy.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>${version.org.springframework}</version>
         </dependency>
     </dependencies>
     <build>
